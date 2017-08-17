@@ -54,6 +54,10 @@ public abstract  class SqlDb<T> {
         return   qr.query(sql, new ColumnListHandler<T>(columnName));
     }
 
+    public void update(String sql) throws Exception{
+        qr.update(sql);
+    }
+
     public T field(String sql,String columnName) throws Exception{
         Map<String,Object> map= qr.query(sql, new MapHandler());
         return map==null?null:(T)map.get(columnName);
