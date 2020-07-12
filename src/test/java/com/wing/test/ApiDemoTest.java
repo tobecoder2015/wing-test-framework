@@ -6,6 +6,7 @@ import com.wing.test.core.BeanContainer;
 import com.wing.test.testcode.api.ApiDemo;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import java.net.URL;
@@ -24,10 +25,20 @@ public class ApiDemoTest extends TestBase{
         Assert.assertEquals(result,"hello wqs");
     }
 
-
     @Test
     public  void test2() throws Exception{
         JSON result=user.apiJsonDemo.json();
         log.info(result.toJSONString());
+    }
+
+
+    @DataProvider(name = "aa")
+    public Object[][] get(){
+        return  new Object[][]{{1,2,3},{4,5,6}};
+    }
+
+    @Test(dataProvider = "aa")
+    public  void test3(int a,int b,int c) throws Exception{
+        log.info((a+b+c)+"");
     }
 }

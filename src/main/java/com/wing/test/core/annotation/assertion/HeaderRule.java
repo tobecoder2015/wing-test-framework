@@ -10,7 +10,7 @@ import java.lang.annotation.*;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface HeaderRule {
 String header();
-    String value();
+    String value() default "";
     Op op() default Op.eq;
     String error() default "";
 }
