@@ -1,9 +1,9 @@
-package com.wing.test.testcode.user;
+package com.wing.test.demo.user;
 
 import com.wing.test.core.user.AbstractUser;
 import com.wing.test.core.httpsender.sender.ISenderContext;
-import com.wing.test.testcode.api.ApiDemo;
-import com.wing.test.testcode.api.ApiJsonDemo;
+import com.wing.test.demo.api.ApiDemo;
+import com.wing.test.demo.api.ApiJsonDemo;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;

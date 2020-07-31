@@ -1,4 +1,4 @@
-package com.wing.test.core.db;
+package com.wing.test.tools.db;
 
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.*;
@@ -11,14 +11,14 @@ import java.util.Map;
 /**
  * Created by Administrator on 2017/7/20.
  */
-public abstract  class SqlDb<T> {
+public abstract  class SqlClient<T> {
 
     private SqlConfig sqlConfig;
     private   BasicDataSource bds = null;
     private  QueryRunner qr=null;
 
 
-    public  SqlDb(SqlConfig sqlConfig){
+    public SqlClient(SqlConfig sqlConfig){
         this.sqlConfig=sqlConfig;
         bds = new BasicDataSource();
         //设置连接池所需的驱动
@@ -27,12 +27,16 @@ public abstract  class SqlDb<T> {
         bds.setUsername(this.sqlConfig.getUsername());
         bds.setPassword(this.sqlConfig.getPassword());
         //设置连接池的初始连接数
-        bds.setInitialSize(10);
+        bds.setInitialSize(this.sqlConfig.getInitialSize());
         //设置连接池最多可以有多少个活动连接数
-        bds.setMaxActive(20);
+        bds.setMaxActive(this.sqlConfig.getMaxActive());
         //设置连接池最少有两个空闲的连接
-        bds.setMinIdle(2);
+        bds.setMinIdle(this.sqlConfig.getMinIdle());
         qr=new QueryRunner(bds);
+    }
+
+    boolean update(String sql) throws Exception{
+        return qr.update(sql)>0;
     }
 
     List<Map<String,Object>>  mapList(String sql) throws Exception{

@@ -1,8 +1,8 @@
-package com.wing.test.base;
+package com.wing.test.demo;
 
 import com.wing.test.core.BeanContainer;
 import com.wing.test.core.httpsender.sender.BaseSenderContext;
-import com.wing.test.testcode.user.User;
+import com.wing.test.demo.user.User;
 import org.testng.annotations.*;
 
 /**

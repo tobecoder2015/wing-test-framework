@@ -1,11 +1,8 @@
-package com.wing.test.testcode.api;
+package com.wing.test.demo.api;
 
 
 import com.alibaba.fastjson.JSON;
 import com.wing.test.core.annotation.api.Api;
-import com.wing.test.core.annotation.api.Param;
-import com.wing.test.core.annotation.api.ParamType;
-import com.wing.test.core.api.HtmlApi;
 import com.wing.test.core.api.JsonApi;
 import org.springframework.stereotype.Component;
 

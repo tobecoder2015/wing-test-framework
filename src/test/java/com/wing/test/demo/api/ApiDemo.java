@@ -1,4 +1,4 @@
-package com.wing.test.testcode.api;
+package com.wing.test.demo.api;
 
 
 import com.wing.test.core.annotation.api.Api;

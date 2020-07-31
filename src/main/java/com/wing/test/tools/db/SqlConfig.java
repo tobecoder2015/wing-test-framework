@@ -1,4 +1,4 @@
-package com.wing.test.core.db;
+package com.wing.test.tools.db;
 
 import lombok.Data;
 
@@ -12,5 +12,8 @@ public class SqlConfig {
     private String url;
     private String username;
     private String password;
-
+    protected int maxActive = 8;
+    protected int maxIdle = 8;
+    protected int minIdle = 0;
+    protected int initialSize = 0;
 }

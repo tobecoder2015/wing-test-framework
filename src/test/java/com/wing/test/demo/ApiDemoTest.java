@@ -1,15 +1,11 @@
-package com.wing.test;
+package com.wing.test.demo;
 
 import com.alibaba.fastjson.JSON;
-import com.wing.test.base.TestBase;
-import com.wing.test.core.BeanContainer;
-import com.wing.test.testcode.api.ApiDemo;
+import com.wing.test.tools.common.ConfigManager;
 import lombok.extern.slf4j.Slf4j;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-
-import java.net.URL;
 
 /**
  * Created by Administrator on 2017/7/21.
@@ -17,6 +13,12 @@ import java.net.URL;
 @Test
 @Slf4j
 public class ApiDemoTest extends TestBase{
+
+    @Test
+    public  void test3() throws Exception{
+        System.out.println(ConfigManager.getString("db_url"));
+      
+    }
 
     @Test
     public  void test() throws Exception{
